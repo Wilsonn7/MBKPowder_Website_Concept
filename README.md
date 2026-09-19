@@ -56,3 +56,4 @@ To add a new product, you **do not** need to edit any React components.
 ## Known Limitations
 - The contact form is a frontend-only implementation with validation. It does not send real emails.
 - Image assets use the provided PNGs and placeholders where exact lifestyle imagery was unavailable.
+  
