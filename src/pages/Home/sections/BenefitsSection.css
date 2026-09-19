@@ -1,0 +1,29 @@
+/* ── BenefitsSection ── */
+
+.benefits {
+  padding-block: var(--spacing-lg);
+}
+
+.benefits__grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xxl);
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .benefits__grid {
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits__grid {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+}
+

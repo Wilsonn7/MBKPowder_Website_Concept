@@ -1,0 +1,7 @@
+/* ── RecommendedProducts ── */
+
+.recommended-products {
+  background-color: var(--color-bg);
+  padding-block: var(--spacing-lg) var(--spacing-xl);
+}
+

@@ -1,0 +1,47 @@
+/* ── BrandStatement ── */
+
+.brand-statement {
+  background-color: var(--color-bg);
+  padding-block: var(--spacing-lg);
+}
+
+.brand-statement__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.brand-statement__eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.18em;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.brand-statement__display {
+  font-family: var(--font-sans);
+  font-size: var(--text-7xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .brand-statement__display {
+    font-size: var(--text-5xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-statement__display {
+    font-size: var(--text-4xl);
+  }
+}
+

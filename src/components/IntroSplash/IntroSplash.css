@@ -1,0 +1,146 @@
+.intro-splash {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2147483647;
+  display: grid;
+  place-items: center;
+  background: rgba(250, 249, 246, 0.98);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+}
+
+.intro-splash__inner {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(80vw, 46rem);
+  height: min(70vh, 28rem);
+}
+
+.intro-splash__logo-wrap,
+.intro-splash__product-wrap {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease, visibility 0.7s ease, transform 0.7s ease;
+  will-change: transform, opacity;
+}
+
+.intro-splash__logo {
+  width: clamp(100px, 22vw, 180px);
+  max-width: 180px;
+  filter: drop-shadow(0 16px 30px rgba(26, 26, 26, 0.08));
+  transform: scale(0.72) translateY(14px);
+  transition: opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1), transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.intro-splash__accent {
+  position: absolute;
+  bottom: 18%;
+  width: min(180px, 34vw);
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(192, 57, 43, 0.9), transparent);
+  transform: scaleX(0.2);
+  transform-origin: center;
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+
+.intro-splash__product {
+  width: clamp(220px, 42vw, 520px);
+  max-width: 520px;
+  max-height: 62vh;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 40px rgba(26, 26, 26, 0.12));
+  transform: scale(0.82) translateY(24px);
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.intro-splash--logo .intro-splash__logo-wrap {
+  opacity: 1;
+  visibility: visible;
+}
+
+.intro-splash--logo .intro-splash__logo,
+.intro-splash--logo .intro-splash__accent {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.intro-splash--logo .intro-splash__accent {
+  transform: scaleX(1);
+}
+
+.intro-splash--product .intro-splash__logo-wrap {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+}
+
+.intro-splash--product .intro-splash__product-wrap {
+  opacity: 1;
+  visibility: visible;
+}
+
+.intro-splash--product .intro-splash__product {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.intro-splash--exiting {
+  animation: splashFadeOut 0.7s ease forwards;
+}
+
+@keyframes splashFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-splash__inner {
+    width: min(86vw, 24rem);
+    height: min(60vh, 20rem);
+  }
+
+  .intro-splash__logo {
+    width: clamp(82px, 30vw, 120px);
+  }
+
+  .intro-splash__product {
+    width: clamp(200px, 72vw, 300px);
+    max-height: 52vh;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .intro-splash__inner {
+    width: min(76vw, 32rem);
+  }
+
+  .intro-splash__product {
+    width: clamp(260px, 58vw, 400px);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .intro-splash__product {
+    width: clamp(320px, 46vw, 500px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-splash {
+    display: none;
+  }
+}

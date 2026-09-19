@@ -1,0 +1,39 @@
+/* ── ProductGrid ── */
+
+.product-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+
+/* Column variants */
+.product-grid--cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product-grid--cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .product-grid--cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .product-grid--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid--cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .product-grid--cols-2 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,75 @@
+/* ── HeroSection ── */
+
+.hero {
+  width: 100%;
+  margin-top: 68px; /* height of fixed navbar */
+}
+
+.hero__image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 580px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* The overlay provides accessible text that visually references the 
+   same text already baked into the image. On desktop, we hide the 
+   HTML overlay since the image text is clearly legible. */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero__copy {
+  padding: var(--spacing-lg);
+  max-width: 50%;
+  /* The copy is visually present in the image itself — 
+     we keep this overlay transparent / screen-reader accessible */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero__heading {
+  font-family: var(--font-sans);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero__subheading {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text);
+  line-height: var(--leading-normal);
+}
+
+.hero__subheading-accent {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero__image {
+    max-height: 380px;
+    object-position: 65% center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__image {
+    max-height: 280px;
+  }
+}

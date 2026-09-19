@@ -1,0 +1,44 @@
+/* ── SectionTitle ── */
+
+.section-title {
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title--center { text-align: center; }
+.section-title--left   { text-align: left; }
+.section-title--right  { text-align: right; }
+
+.section-title__eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+.section-title__heading {
+  font-family: var(--font-sans);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+}
+
+.section-title__subtitle {
+  margin-top: var(--spacing-sm);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  max-width: 560px;
+}
+
+.section-title--center .section-title__subtitle {
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .section-title__heading {
+    font-size: var(--text-3xl);
+  }
+}
